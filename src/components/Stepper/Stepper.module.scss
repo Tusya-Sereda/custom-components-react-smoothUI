@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card_stepper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .title_step {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 1rem;
+    transition: 0.5s;
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: 600;
+  }
+}
+
+.form_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
+
+.button {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+}
