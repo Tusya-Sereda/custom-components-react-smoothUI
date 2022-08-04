@@ -1,0 +1,144 @@
+@import "../../utils/styles/mixins.scss";
+
+.container {
+  min-height: calc(100vh - 80px);
+  background-color: #6667ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .wrapper {
+    background-color: #fff;
+    border-radius: 15px;
+    max-width: 380px;
+    width: 100%;
+    padding: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+
+    header {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .poll_area {
+      margin: 20px 0 15px 0;
+
+      .selected {
+        background: red;
+      }
+
+      label {
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        padding: 8px 15px;
+        border: 2px solid #e6e6e6;
+        transition: all 0.2s ease;
+
+        .progress {
+          height: 7px;
+          width: 100%;
+          background: #f0f0f0;
+          position: relative;
+          margin: 8px 0 3px 0;
+          border-radius: 30px;
+          display: none;
+          pointer-events: none;
+        }
+
+        .progress::after {
+          position: absolute;
+          content: "";
+          height: 100%;
+          background: #ccc;
+          // width: 100%;
+          border-radius: inherit;
+          transition: all 0.2s ease;
+        }
+
+        .row {
+          display: flex;
+          justify-content: space-between;
+          pointer-events: none;
+
+          span {
+            font-size: 16px;
+            font-weight: 500;
+          }
+
+          .column {
+            display: flex;
+            align-items: center;
+          }
+
+          .percent {
+            display: none;
+          }
+
+          .circle {
+            height: 19px;
+            width: 19px;
+            display: block;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            position: relative;
+          }
+
+          .circle::after {
+            content: "";
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            background: #6665ee;
+            top: 2px;
+            left: 2px;
+            border-radius: inherit;
+            display: none;
+          }
+        }
+      }
+
+      label.selectall :is(.percent, .progress) {
+        display: block;
+      }
+
+      label:hover {
+        border-color: #ddd;
+      }
+
+      label:hover .row .circle::after {
+        display: block;
+        background: #e6e6e6;
+      }
+
+      label.selected {
+        border-color: #6667ee !important;
+      }
+
+      label.selected .row .circle {
+        border-radius: #6665ee;
+      }
+
+      label.selected .row .circle::after {
+        display: block;
+        background: #6665ee !important;
+      }
+
+      label.selected .progress::after {
+        background: #6665ee;
+      }
+
+      label.selectall .progress,
+      label.selectall .row .percent {
+        display: block;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        display: none;
+      }
+    }
+  }
+}

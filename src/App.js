@@ -3,6 +3,7 @@ import { MenuItem } from "./components/MenuItem/MenuItem";
 import { SocialMediaButtons } from "./components/SocialMediaButtons/SocialMediaButtons";
 import { StepperContent } from "./components/Stepper/Stepper";
 import { DigitalClock } from "./components/DigitalClock/DigitalClock";
+import { PollUI } from "./components/PollUI/PollUI";
 import "./App.css";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <Route path="/stepper" element={<StepperContent />} />
           <Route path="/404" element={<div>Page 404</div>} />
           <Route path="/box" element={<div>BOX WITH FLIP</div>} />
-          <Route path="/poll" element={<div>POLL UI</div>} />
+          <Route path="/poll" element={<PollUI />} />
           <Route path="/clock" element={<DigitalClock />} />
           <Route path="/social_media" element={<SocialMediaButtons />} />
           <Route path="/calendar" element={<div>CALENDAR</div>} />
