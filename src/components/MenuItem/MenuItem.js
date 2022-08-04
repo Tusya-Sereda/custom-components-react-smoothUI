@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import Styles from "./MenuItem.module.scss";
@@ -6,7 +5,7 @@ import Styles from "./MenuItem.module.scss";
 export const MenuItem = () => {
   const navigate = useNavigate();
 
-  const [menuItems, setMenuItems] = useState([
+  const menuItems = [
     {
       id: uuidv4(),
       title: "Vertical Timeline",
@@ -30,7 +29,7 @@ export const MenuItem = () => {
       flag: "calendar",
       isClick: false,
     },
-  ]);
+  ];
 
   return (
     <nav className={Styles.navbar}>
