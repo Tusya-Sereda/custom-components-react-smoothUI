@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import { MenuItem } from "./components/MenuItem/MenuItem";
 import { SocialMediaButtons } from "./components/SocialMediaButtons/SocialMediaButtons";
 import { StepperContent } from "./components/Stepper/Stepper";
+import { DigitalClock } from "./components/DigitalClock/DigitalClock";
+import "./App.css";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path="/404" element={<div>Page 404</div>} />
           <Route path="/box" element={<div>BOX WITH FLIP</div>} />
           <Route path="/poll" element={<div>POLL UI</div>} />
-          <Route path="/clock" element={<div>CLock UI</div>} />
+          <Route path="/clock" element={<DigitalClock />} />
           <Route path="/social_media" element={<SocialMediaButtons />} />
           <Route path="/calendar" element={<div>CALENDAR</div>} />
         </Routes>

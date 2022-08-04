@@ -1,0 +1,67 @@
+@import "../../utils/styles/mixins.scss";
+
+.container {
+  @include hw(calc(100vh - 80px), 100%);
+  @include dFlex(flex, center, center);
+  background-color: #000;
+
+  .wrapper {
+    @include hw(100px, 360px);
+    @include dFlex(flex, center, center);
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    animation: animate 1.5s linear infinite;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .display {
+      @include hw(85px, 345px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 999;
+      transform: translate(-50%, -50%);
+      background: #1b1b1b;
+      border-radius: 6px;
+      text-align: center;
+
+      .time {
+        line-height: 85px;
+        font-size: 50px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate 1.5s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes animate {
+  100% {
+    filter: hue-rotate((360deg));
+  }
+}
+
+.wrapper span {
+  @include hw(100%, 100%);
+  background: inherit;
+  border-radius: 10px;
+}
+
+.wrapper span:first-child {
+  filter: blur(10px);
+}
+
+.wrapper span:last-child {
+  filter: blur(20px);
+}
